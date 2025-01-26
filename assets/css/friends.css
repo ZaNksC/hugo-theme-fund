@@ -9,7 +9,9 @@
 
 .friends-container {
     display: grid;
-    grid-template-columns: repeat(2, 4fr);
+    grid-template-columns: repeat(4, 1fr); /* 4列 */
+    grid-template-rows: repeat(2, 1fr); /* 2行 */
+    place-items: center;
     gap: 2rem;
     height: 30rem;
 }
@@ -24,6 +26,12 @@
     justify-content: center;
     text-align: center;
     width: 14rem;
+    height: 18rem;
+
+
+    .friend-img {
+        flex: 3;
+    }
 
     img {
         height: 10rem;
@@ -38,6 +46,14 @@
 }
 
 .friend-card-meta {
+    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 0.2rem;
+    margin: 1rem;
+
+    .friend-description {
+        text-align: left;
+    }
 }
+

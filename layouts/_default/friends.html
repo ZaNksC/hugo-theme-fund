@@ -14,14 +14,14 @@
             {{ range $paginator.Pages }}
             {{- $avatar := default "/images/default/avatar.jpg" .Params.avatar -}}
             <a class="friend-card" href="{{ .Params.linkTo }}">
-                <div>
+                <div class="friend-img">
                     <img class="friend-card-image" src="{{ $avatar }}">
                 </div>
                 <div class="friend-card-meta">
                     <div class="fund-title">
                         {{ .Params.name }}
                     </div>
-                    <div class="fund-secondary">
+                    <div class="fund-secondary friend-description">
                         {{ .Params.summary }}
                     </div>
                 </div>
