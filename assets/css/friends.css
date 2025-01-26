@@ -1,6 +1,10 @@
 .friend-page-container {
     padding-left: 2rem;
     padding-right: 2rem;
+
+    .post-container {
+        text-align: left;
+    }
 }
 
 .friends-container {
@@ -19,8 +23,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height: 14rem;
-    width: 12rem;
+    width: 14rem;
 
     img {
         height: 10rem;
