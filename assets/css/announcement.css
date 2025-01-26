@@ -10,7 +10,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    text-align: left;
 }
 
 .announcement-time {
@@ -32,4 +31,5 @@
     margin-top: 1rem;
     margin-left: 0.3rem;
     margin-right: 0.3rem;
+    text-align: left;
 }
