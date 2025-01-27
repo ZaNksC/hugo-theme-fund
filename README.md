@@ -29,15 +29,38 @@ Example:
 
 ```bach
 git submodule add git@github.com:ZaNksC/hugo-theme-fund.git themes/fund
-
-# 切换到main分支
-cd themes/fund
-git checkout main
 ```
+
+如果分支对于不上，在 `.gitmodules` 文件中的 `[submodule "themes/fund"]` 节点下添加 `branch = main`
+
+#### 更新
+
+```
+git submodule update --remote
+```
+
+#### 卸载
+
+```
+rm -rf .git/modules/themes/fund
+git submodule deinit -f themes/fund
+```
+
+删除 `.gitmodules` 文件中的 `[submodule "themes/fund"]` 节点
 
 ### 下载源码后安装
 
+#### 安装
+
 从github下载主题源码后，将所有文件夹放到 `themes/fund` 目录下
+
+#### 更新
+
+使用最新的代码覆盖
+
+#### 卸载
+
+删除 `themes/fund` 目录即可
 
 ## 配置
 
