@@ -18,12 +18,18 @@
 
 {{- $githubCSS := resources.Get "css/theme/github.css" | resources.Minify | resources.Fingerprint -}}
 {{- $githubDarkCSS := resources.Get "css/theme/github-dark.css" | resources.Minify | resources.Fingerprint -}}
+{{- $twikooGithubCSS := resources.Get "css/theme/twikoo-github.css" | resources.Minify | resources.Fingerprint -}}
+{{- $twikooGithubDarkCSS := resources.Get "css/theme/twikoo-github-dark.css" | resources.Minify | resources.Fingerprint -}}
 
 <link rel="preload" href="{{ $githubCSS.RelPermalink }}" as="style">
 <link rel="preload" href="{{ $githubDarkCSS.RelPermalink }}" as="style">
+<link rel="preload" href="{{ $twikooGithubCSS.RelPermalink }}" as="style">
+<link rel="preload" href="{{ $twikooGithubDarkCSS.RelPermalink }}" as="style">
 
 <link rel="stylesheet" href="{{ $githubCSS.RelPermalink }}" id="hl-github-css" media="all">
 <link rel="stylesheet" href="{{ $githubDarkCSS.RelPermalink }}" id="hl-github-dark-css" media="all" disabled>
+<link rel="stylesheet" href="{{ $twikooGithubCSS.RelPermalink }}" id="twikoo-github-css" media="all">
+<link rel="stylesheet" href="{{ $twikooGithubDarkCSS.RelPermalink }}" id="twikoo-github-dark-css" media="all" disabled>
 
 
 

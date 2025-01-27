@@ -1,13 +1,19 @@
 function setTheme(theme) {
     const lightCSS = document.getElementById(`hl-github-css`);
     const darkCSS = document.getElementById(`hl-github-dark-css`);
+    const twLightCSS = document.getElementById(`twikoo-github-css`);
+    const twDarkCSS = document.getElementById(`twikoo-github-dark-css`);
 
     if (theme === "dark") {
         lightCSS.disabled = true;
         darkCSS.disabled = false;
+        twLightCSS.disabled = true;
+        twDarkCSS.disabled = false;
     } else {
         lightCSS.disabled = false;
         darkCSS.disabled = true;
+        twLightCSS.disabled = false;
+        twDarkCSS.disabled = true;
     }
 }
 
