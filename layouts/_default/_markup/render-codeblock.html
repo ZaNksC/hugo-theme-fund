@@ -17,7 +17,7 @@
             {{ if (ne $title "") }}
             {{ $title | safeHTML }}
             {{- else }}
-            [ {{$lang}} ]
+            [ {{ $lang  | safeHTML }} ]
             {{- end }}
         </div>
         <div class="fund-code-header-right-container">

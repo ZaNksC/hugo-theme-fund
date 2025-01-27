@@ -1,37 +1,20 @@
-.friend-page-container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-
-    .post-container {
-        text-align: left;
-    }
-}
-
 .friends-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4列 */
-    grid-template-rows: repeat(2, 1fr); /* 2行 */
-    place-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     height: 30rem;
 }
 
 .friend-card {
-    padding-top: 0.5rem;
+    padding: 0.5rem;
     border: 1px solid var(--board-color);
     border-radius: 1.2rem;
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 14rem;
-    height: 18rem;
-
-
-    .friend-img {
-        flex: 3;
-    }
+    height: 14rem;
 
     img {
         height: 10rem;
@@ -46,14 +29,6 @@
 }
 
 .friend-card-meta {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.2rem;
-    margin: 1rem;
-
-    .friend-description {
-        text-align: left;
-    }
 }
-
