@@ -7,17 +7,23 @@
             {{ .Title }}
         </div>
 
+        <div class="post-container">
+            {{ .Content }}
+        </div>
+
         <div class="friends-container shadow-a">
             {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 16 }}
             {{ range $paginator.Pages }}
             {{- $avatar := default "/images/default/avatar.jpg" .Params.avatar -}}
             <a class="friend-card" href="{{ .Params.linkTo }}">
-                <img class="friend-card-image" src="{{ $avatar }}">
+                <div>
+                    <img class="friend-card-image" src="{{ $avatar }}">
+                </div>
                 <div class="friend-card-meta">
                     <div class="fund-title">
                         {{ .Params.name }}
                     </div>
-                    <div class="fund-secondary">
+                    <div class="fund-secondary friends-description">
                         {{ .Params.summary }}
                     </div>
                 </div>

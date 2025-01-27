@@ -14,7 +14,7 @@
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
-    height: 14rem;
+    height: 18rem;
 
     img {
         height: 10rem;
@@ -31,4 +31,8 @@
 .friend-card-meta {
     display: flex;
     flex-direction: column;
+}
+
+.friends-description {
+    text-align: left;
 }
