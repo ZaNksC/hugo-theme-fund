@@ -26,6 +26,15 @@
     margin-left: 2rem;
 }
 
+.site-title-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0.3rem;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
 .header-container a {
     color: var(--primary);
 }
