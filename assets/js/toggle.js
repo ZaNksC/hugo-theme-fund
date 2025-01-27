@@ -11,7 +11,7 @@ function setTheme(theme) {
     }
 }
 
-const savedTheme = localStorage.getItem("theme") || "light";
+const savedTheme = localStorage.getItem("theme") || "dark";
 if (savedTheme === "dark") {
     document.documentElement.classList.add("dark");
     setTheme("dark");
@@ -20,15 +20,15 @@ if (savedTheme === "dark") {
 document.addEventListener("DOMContentLoaded", function () {
     // 获取保存的主题
     const savedTheme = localStorage.getItem("theme") || "light";
-
     // 应用主题
     document.body.classList.toggle("dark", savedTheme === "dark");
-
     // 更新图标状态
     document.getElementById("light-mode-icon").classList.toggle("active", savedTheme === "light");
     document.getElementById("dark-mode-icon").classList.toggle("active", savedTheme === "dark");
 
-    document.getElementById("toggle-button").addEventListener("click", function () {
+    document.getElementById("toggle-button").addEventListener("click", () => {
+        console.log(document.body.className.includes("dark"));
+        const toTheme = document.body.className.includes("dark") ? "light" : "dark";
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
             localStorage.setItem("theme", 'light');
@@ -38,5 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("theme", 'dark');
             setTheme("dark");
         }
+        document.getElementById("light-mode-icon").classList.toggle("active", toTheme === "light");
+        document.getElementById("dark-mode-icon").classList.toggle("active", toTheme === "dark");
     });
 });
