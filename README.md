@@ -6,6 +6,8 @@
 
 替小猫黄基金祝各位万事胜意，平安喜乐。
 
+[站点案例](https://www.zanks.link)
+
 ## Features
 
 - [x] 多作者
