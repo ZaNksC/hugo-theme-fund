@@ -19,3 +19,9 @@
     margin-left: 10%;
     margin-right: 10%;
 }
+
+.code-toolbar {
+    background-color: var(--code-bg-color);
+    padding-top: 0.3rem;
+    padding-left: 1rem;
+}

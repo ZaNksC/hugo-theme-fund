@@ -5,11 +5,10 @@
  */
 /* General */
 .code-toolbar {
-    background-color: var(--code-bg-color);
-
     code {
         all: unset;
     }
+
     pre {
         all: unset;
     }
@@ -18,7 +17,6 @@
     code[class*="language-"] {
         color: #ffffff;
         text-shadow: none;
-        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
         direction: ltr;
         text-align: left;
         white-space: pre;
@@ -47,8 +45,6 @@
         }
     }
     pre[class*="language-"] {
-        padding: 1em;
-        margin: .5em 0;
         overflow: auto;
     }
     /* Line highlighting */
