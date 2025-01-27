@@ -29,6 +29,10 @@ Example:
 
 ```bach
 git submodule add git@github.com:ZaNksC/hugo-theme-fund.git themes/fund
+
+# 切换到main分支
+cd themes/fund
+git checkout main
 ```
 
 ### 下载源码后安装
