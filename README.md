@@ -37,7 +37,7 @@ git checkout main
 
 ### 下载源码后安装
 
-从github下载主题源码后，将所有文件夹放到 `theme/fund` 目录下
+从github下载主题源码后，将所有文件夹放到 `themes/fund` 目录下
 
 ## 配置
 
