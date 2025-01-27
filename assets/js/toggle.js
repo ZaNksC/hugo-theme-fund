@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("dark-mode-icon").classList.toggle("active", savedTheme === "dark");
 
     document.getElementById("toggle-button").addEventListener("click", () => {
-        console.log(document.body.className.includes("dark"));
         const toTheme = document.body.className.includes("dark") ? "light" : "dark";
         if (document.body.className.includes("dark")) {
             document.body.classList.remove('dark');
