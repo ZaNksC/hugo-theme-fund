@@ -23,5 +23,7 @@
 .code-toolbar {
     background-color: var(--code-bg-color);
     padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
     padding-left: 1rem;
+    border-radius: 0.5rem;
 }
