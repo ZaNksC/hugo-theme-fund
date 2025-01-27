@@ -10,9 +10,14 @@
 }
 
 .dark {
+    --md-link-color: var(--link-color);
+    --md-link-color-hover: var(--link-hover-color);
     --blockquote-border-color: #04c755;
     --blockquote-bg-color: #3d3e41;
+    --table-border-color: var(--primary);
     --th-background-color: #464646;
+    --code-bg-color: var(--blockquote-bg-color);
+    --code-border-color: var(--primary);
 }
 
 .post-container {
