@@ -1,10 +1,19 @@
 .friends-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列 */
+    grid-template-rows: repeat(2, 1fr); /* 2行 */
     justify-content: center;
+    place-items: center;
     gap: 2rem;
-    height: 30rem;
+    min-height: 30rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.friend-content {
+    text-align: left;
+    padding-left: 2rem;
+    padding-right: 2rem;
 }
 
 .friend-card {
@@ -14,7 +23,7 @@
     gap: 0.5rem;
     display: flex;
     flex-direction: column;
-    height: 18rem;
+    width: 14rem;
 
     img {
         height: 10rem;
