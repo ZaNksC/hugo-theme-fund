@@ -20,6 +20,15 @@
     margin-right: 10%;
 }
 
+.tk-content {
+    code {
+        padding: 0.2rem 0.5rem;
+        border-radius: 0.2rem;
+        background-color: var(--code-bg-color);
+        color: var(--tk-code-color);
+    }
+}
+
 .code-toolbar {
     background-color: var(--code-bg-color);
     padding-top: 0.3rem;

@@ -30,6 +30,7 @@
     --fill-color: var(--background-color);
     --stroke-color: var(--primary);
     --swiper-pagination-bullet-inactive-color: var(--primary);
+    --tk-code-color: #cf222e;
 }
 
 .dark {
@@ -51,4 +52,5 @@
     --fill-color: var(--background-color);
     --stroke-color: var(--primary);
     --swiper-pagination-bullet-inactive-color: var(--primary);
+    --tk-code-color: #ff7b72;
 }

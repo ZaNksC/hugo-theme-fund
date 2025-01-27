@@ -8,11 +8,6 @@
 .code-toolbar {
     code {
         all: unset;
-        padding-left: 0.2rem;
-        padding-right: 0.2rem;
-        border-radius: 0.2rem;
-        background-color: var(--code-bg-color);
-        color: #cf222e;
     }
 
     pre {
