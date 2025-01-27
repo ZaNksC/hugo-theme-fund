@@ -54,7 +54,6 @@
     }
     pre[class*="language-"] > code[class*="language-"] {
         position: relative;
-        z-index: 1;
     }
     .line-highlight {
         position: absolute;
@@ -64,7 +63,6 @@
         margin-top: 1em;
         background: #fff8c5;
         box-shadow: inset 5px 0 0 #eed888;
-        z-index: 0;
         pointer-events: none;
         line-height: inherit;
         white-space: pre;
