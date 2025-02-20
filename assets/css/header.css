@@ -109,6 +109,22 @@
     animation: show 0.3s forwards;
 }
 
+.header-center-typeit-board {
+    width: fit-content;
+    font-weight: bold;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0.7rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-center-typeit-board.hidden {
+    display: none;
+}
+
 @keyframes show {
     0% {
         transform: scale(0);
