@@ -84,3 +84,14 @@ a:hover {
   color: var(--link-hover-color);
   cursor: pointer;
 }
+
+@media (max-width: 800px) {
+  .right-container {
+    display: none;
+  }
+
+  .left-container {
+    width: calc(100vw - 48px);
+    min-width: calc(100vw - 48px);
+  }
+}

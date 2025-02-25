@@ -59,3 +59,9 @@
     bottom: 0.5rem;
     right: 1.5rem;
 }
+
+@media (max-width: 800px) {
+    .post-list-container {
+        grid-template-columns: 1fr;
+    }
+}
