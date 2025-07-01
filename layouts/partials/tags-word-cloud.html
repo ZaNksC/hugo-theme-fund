@@ -1,0 +1,61 @@
+<div>
+    <div id="wordcloud-canvas"></div>
+</div>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        // 获取标签数据（修正后的版本）
+        var tags = [];
+        {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+            tags.push({
+                text: "{{ $name }}",
+                weight: {{ $taxonomy.Count }},
+                link: "/tags/{{ $name | urlize }}/"
+            });
+        {{ end }}
+
+        function getRemInPixels() {
+            return parseFloat(
+                getComputedStyle(document.documentElement)
+                    .fontSize
+            );
+        }
+        const remBase = getRemInPixels(); // 获取当前1rem的像素值
+        // 计算权重比例（修正后的算法）
+        const maxWeight = Math.max(...tags.map(t => t.weight));
+        const minWeight = Math.min(...tags.map(t => t.weight));
+        const scaleFactor = 3 * remBase; // 最大字体尺寸
+
+        const wordcloudData = tags.map(tag => [
+            tag.text,
+            // 线性插值公式
+            ((tag.weight - minWeight) / (maxWeight - minWeight)) * scaleFactor + remBase,
+        ]).filter(item => item[1] > 0); // 过滤无效数据
+
+        // 渲染配置（优化版）
+        const config = {
+            list: wordcloudData,
+            gridSize: 10,
+            weightFactor: size => size * 0.9,
+            color: () => `hsl(${Math.random()*360}, 70%, 50%)`,
+            backgroundColor: 'transparent', // 透明背景
+            rotateRatio: 0.3,
+            rotationSteps: 3,
+            hover: function(item) {
+                item.element.style.cursor = 'pointer';
+                item.element.style.filter = 'brightness(1.2)';
+            },
+            click: function(item) {
+                const tag = tags.find(t => t.text === item[0]);
+                window.location = tag.link;
+            },
+            ellipticity: 0.8,          // 椭圆度
+            drawOutOfBound: false       // 禁止绘制到画布外
+        };
+
+        // 初始化词云
+        const canvas = document.getElementById('wordcloud-canvas');
+        WordCloud(canvas, config);
+    });
+</script>
+

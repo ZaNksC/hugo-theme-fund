@@ -5,3 +5,9 @@
 {{ partialCached "head/css.html" . }}
 {{ partialCached "head/js.html" . }}
 {{ partialCached "head/third-party.html" . }}
+
+{{- if .Site.Params.feature.googleAnalytics }}
+{{- if not hugo.IsServer }}
+{{ partial "google-analytics.html" .}}
+{{- end}}
+{{- end }}

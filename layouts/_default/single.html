@@ -63,6 +63,45 @@
                     {{- partial "copyright.html" . -}}
                 </div>
                 <div class="post-footer">
+                    <div class="fund-divider fund-title pn-text">
+                        <span>看看其他文章</span>
+                    </div>
+                    <div class="post-nav">
+                        {{ with .Prev }}
+                        <a class="nav-block prev" href="{{ .RelPermalink }}">
+                            <span class="arrow">《 </span>
+                            <div class="pn-content-container">
+                                <span>{{ .Title }}</span>
+                            </div>
+                        </a>
+                        {{ else }}
+                        <div class="nav-block prev no-item">
+                            <span class="arrow"></span>
+                            <div class="pn-content-container">
+                                <span>已经是第一篇了哦</span>
+                            </div>
+                        </div>
+                        {{ end }}
+
+                        {{ with .Next }}
+                        <a class="nav-block next" href="{{ .RelPermalink }}">
+                            <div class="pn-content-container">
+                                <span>{{ .Title }}</span>
+                            </div>
+                            <span class="arrow"> 》</span>
+                        </a>
+                        {{ else }}
+                        <div class="nav-block next no-item">
+                            <div class="pn-content-container">
+                                <span>已经是最后一篇了哦</span>
+                            </div>
+                            <span class="arrow"></span>
+                        </div>
+                        {{ end }}
+                    </div>
+
+
+
                     <div class="comments">
                         {{- if .Site.Params.feature.comments }}
                             {{ $commentsEnable := .Site.Params.comments.defaultInPost | default false }}

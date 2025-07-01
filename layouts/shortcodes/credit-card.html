@@ -1,0 +1,47 @@
+{{/* creditcard.html */}}
+<div class="credit-card">
+    <div class="card-img card-flex1">
+        <div class="card-img-wrapper">
+            {{ $img := .Get "image" | default "/images/cards/placeholder.png" }}
+            <img
+                    src="{{ $img }}"
+                    alt="{{ .Get "name" | default (printf "%s %s" (.Get "issuer") (.Get "level")) }} 卡片图片"
+            onerror="this.onerror=null;this.src='/images/cards/placeholder.png';"
+            />
+            {{ $status := .Get "status" | default "active" }}
+            <div class="card-status">
+                {{ if eq $status "active" }}
+                <span
+                        class="badge"
+                        style="
+                    --badge-bg-start: #4CAF50;
+                    --badge-bg-end: #388E3C;
+                    "
+                >
+            使用中
+            </span>
+
+                {{ else }}
+                <span
+                        class="badge"
+                        style="
+                    --badge-bg-start: #9E9E9E;
+                    --badge-bg-end: #616161;
+                    "
+                >
+            已注销
+            </span>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+    <!-- 基本信息 -->
+    <div class="credit-card-info-meta card-flex1">
+        <div class ="credit-card-title"><strong> {{ .Get "name" | default (printf "%s %s" (.Get "issuer") (.Get "level")) }}</strong></div>
+        <div class="card-meta-item card-sub-text"><strong>🏦 发卡行：</strong>{{ .Get "issuer" }}</div>
+        <div class="card-meta-item card-sub-text"><strong>💳 卡组织：</strong>{{ .Get "network" }}</div>
+        <div class="card-meta-item card-sub-text"><strong>🎖️ 卡等级：</strong>{{ .Get "level" }}</div>
+    </div>
+    <!-- 年费 & 权益 -->
+    {{ .Inner }}
+</div>

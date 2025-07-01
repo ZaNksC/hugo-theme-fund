@@ -93,6 +93,12 @@
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, auto);
     }
+
+    @media (max-width: 768px) {
+        margin-left: 2rem;;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
+    }
 }
 
 .chirp-container:not(:last-child) {

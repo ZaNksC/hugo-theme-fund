@@ -4,7 +4,7 @@
   padding: 0 0.75rem;
   background-color: rgba(68, 138, 255, 0.1);
   border-left: 0.25rem solid #448aff;
-  border-radius: var(--radius);
+  border-radius: 0.5rem;
   overflow: auto;
 }
 
@@ -25,11 +25,11 @@
 }
 
 .admonition i.icon {
-  font-size: 0.85rem;
+  font-size: 1.2rem;
   color: #448aff;
   position: absolute;
-  top: 0.8rem;
-  left: 0.4rem;
+  top: 0.4rem;
+  left: 0.1rem;
 }
 
 .admonition i.details-icon {

@@ -18,6 +18,11 @@
 #twikoo {
     margin-left: 10%;
     margin-right: 10%;
+
+    @media (max-width: 768px) {
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+    }
 }
 
 .tk-content {

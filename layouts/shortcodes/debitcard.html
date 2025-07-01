@@ -1,0 +1,77 @@
+<style>
+    .debit-card {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid #d1d5db;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+        background: white;
+        margin-bottom: 2rem;
+    }
+    .debit-card img {
+        width: 220px;
+        object-fit: cover;
+    }
+    .debit-card-content {
+        padding: 1rem;
+        flex: 1;
+    }
+    .debit-card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .debit-badge {
+        font-size: 0.75rem;
+        background-color: #059669;
+        color: white;
+        padding: 0.25rem 0.6rem;
+        border-radius: 0.5rem;
+    }
+    .debit-field {
+        margin-bottom: 0.6rem;
+    }
+    .debit-label {
+        font-weight: 500;
+        color: #374151;
+    }
+    .debit-value {
+        color: #1f2937;
+    }
+</style>
+
+<div class="debit-card">
+    <img src="{{ .Get "img" }}" alt="{{ .Get "title" }}">
+    <div class="debit-card-content">
+        <div class="debit-card-title">
+            {{ .Get "title" }}
+            <span class="debit-badge">储蓄卡</span>
+        </div>
+        <div class="debit-field">
+            <span class="debit-label">发卡银行：</span>
+            <span class="debit-value">{{ .Get "bank" }}</span>
+        </div>
+        <div class="debit-field">
+            <span class="debit-label">卡组织：</span>
+            <span class="debit-value">{{ .Get "network" }}</span>
+        </div>
+        <div class="debit-field">
+            <span class="debit-label">账户类型：</span>
+            <span class="debit-value">{{ .Get "account" }}</span>
+        </div>
+        <div class="debit-field">
+            <span class="debit-label">主要功能：</span>
+            <span class="debit-value">{{ .Get "features" }}</span>
+        </div>
+        {{ if .Inner }}
+        <div class="debit-field">
+            <span class="debit-label">备注：</span>
+            <span class="debit-value">{{ .Inner | markdownify }}</span>
+        </div>
+        {{ end }}
+    </div>
+</div>

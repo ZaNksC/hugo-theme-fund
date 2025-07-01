@@ -43,3 +43,24 @@
         margin: 0;
     }
 }
+
+
+@media (max-width: 768px) {
+    .tab-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+        .fund-divider-vertical {
+            display: none;
+        }
+    }
+    
+    .about-meta {
+        width: 100%;
+    }
+    
+    .about-info {
+        width: unset;
+    }
+}

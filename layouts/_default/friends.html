@@ -12,7 +12,7 @@
         </div>
 
         <div class="friends-container shadow-a">
-            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 16 }}
+            {{ $paginator := .Paginate (where .Site.RegularPages "Type" "posts") 30 }}
             {{ range $paginator.Pages }}
             {{- $avatar := default "/images/default/avatar.jpg" .Params.avatar -}}
             <a class="friend-card" href="{{ .Params.linkTo }}">
