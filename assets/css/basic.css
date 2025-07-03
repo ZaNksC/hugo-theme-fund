@@ -42,7 +42,7 @@
     z-index: 1; /* 确保文本在分割线上方 */
 }
 
-.fund-divider::before{
+.fund-divider::before {
     content: '';
     position: absolute;
     top: 50%;
@@ -137,4 +137,40 @@
 .inline-svg svg path {
     fill: var(--fill-color);
     stroke: var(--stroke-color);
+}
+
+.details .details-summary:hover {
+    cursor: pointer;
+}
+
+.details i.details-icon {
+    -webkit-transition: transform 0.2s ease;
+    -moz-transition: transform 0.2s ease;
+    -o-transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
+}
+
+.details .details-content {
+    max-height: 0;
+    overflow-y: hidden;
+    -webkit-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+    -moz-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+    -o-transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+    transition: max-height 0.8s cubic-bezier(0, 1, 0, 1) -0.1s;
+}
+
+.details.open i.details-icon {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.details.open .details-content {
+    max-height: 20rem;
+    -webkit-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+    -moz-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+    -o-transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
+    transition: max-height 0.8s cubic-bezier(0.5, 0, 1, 0) 0s;
 }

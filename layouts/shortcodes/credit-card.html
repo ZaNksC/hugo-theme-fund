@@ -2,11 +2,10 @@
 <div class="credit-card">
     <div class="card-img card-flex1">
         <div class="card-img-wrapper">
-            {{ $img := .Get "image" | default "/images/cards/placeholder.png" }}
+            {{ $img := .Get "image" | default "/images/default/card.webp" }}
             <img
                     src="{{ $img }}"
-                    alt="{{ .Get "name" | default (printf "%s %s" (.Get "issuer") (.Get "level")) }} 卡片图片"
-            onerror="this.onerror=null;this.src='/images/cards/placeholder.png';"
+            onerror="this.onerror=null;this.src='/images/default/card.webp';"
             />
             {{ $status := .Get "status" | default "active" }}
             <div class="card-status">

@@ -1,0 +1,24 @@
+{{ $validStyle := slice "blue" "green" "yellow" "gray" "red" }}
+{{ $style := .Get "style" | default "blue" }}
+
+{{ $img := .Get "img"}}
+<div class="link-goto card-list-item card-list-item-style-{{ $style }}">
+    <div class="link-header-wrapper">
+        {{ if $img }}
+        <div class="link-img-wrapper">
+            <img class="link-img"  src="{{ $img }}"/>
+        </div>
+        {{ end }}
+        <div class="link-title">{{ .Get "title" }}</div>
+    </div>
+    <div class="item-content-wrapper card-list-item-subtext link-desc">
+        {{ .Inner }}
+    </div>
+    {{ $gotoText := .Get "gotoText" | default "Goto" }}
+    {{ $link := .Get "link" | default "https://www.zanks.link"}}
+    <div class="item-content-wrapper card-list-item-subtext link-goto-wrapper">
+        <a class="link-goto-a" href="{{ $link }}" target="_blank">
+            {{ $gotoText }}
+        </a>
+    </div>
+</div>
