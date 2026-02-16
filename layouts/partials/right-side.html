@@ -4,7 +4,7 @@
 <div class="announcements-container">
     {{ partial "home/announcement" . }}
 </div>
-
+{{ partial "home/goto-next.html" . }}
 {{ if and (eq .Section "posts") (eq .Kind "page") }}
     <div class="toc-container pinned">
         {{ partial "post/toc" . }}
@@ -25,7 +25,7 @@
                     <span>🏷️ 标签</span>
                 </div>
             </div>
-                {{ partial "tags" . }}
+                {{ partial "tags-word-cloud" . }}
         </div>
     </div>
 {{- end }}

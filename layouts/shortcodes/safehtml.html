@@ -1,8 +1,3 @@
-{{/* 检查命名参数和位置参数 */}}
-{{ $content := .Get "content" }}
-{{ if .IsNamedParams }}
-  {{ $content = .Inner }}
-{{ end }}
-
-{{/* 将内容标记为safeHTML，防止被转义 */}}
-{{ $content | safeHTML }}
+<pre style="white-space: pre-wrap; background: #f9fafb; padding: 1rem; border-radius: 8px; font-family: monospace; font-size: 0.9rem; border: 1px solid #e5e7eb;">
+{{ .Inner | htmlEscape }}
+</pre>

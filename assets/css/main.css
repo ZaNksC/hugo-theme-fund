@@ -13,6 +13,15 @@ body {
           var(--background-color);
 }
 
+footer {
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  padding-bottom: 1rem;
+  padding-top: 2rem;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -83,4 +92,15 @@ a:hover {
 .shadow-a a:hover {
   color: var(--link-hover-color);
   cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .right-container {
+    display: none;
+  }
+
+  .left-container {
+    width: calc(100vw - 48px);
+    min-width: calc(100vw - 48px);
+  }
 }

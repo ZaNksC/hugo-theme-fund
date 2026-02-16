@@ -1,0 +1,38 @@
+{{/*
+series.html - Hugo Partial for Series Articles
+依赖文章 Front Matter:
+series: "系列名称"
+series_index: 整数，用于排序
+用法: {{ partial "series.html" . }}
+*/}}
+
+{{ with .Params.series }}
+{{ $seriesName := . }}
+
+{{/* 获取同系列文章并按 series_index 排序 */}}
+{{ $seriesPages := where $.Site.RegularPages "Params.series" $seriesName }}
+{{ $seriesPages := where $seriesPages "Params.series_index" "ne" nil }}
+{{ $seriesPages := sort $seriesPages "Params.series_index" "asc" }}
+
+{{ if gt (len $seriesPages) 0 }}
+<blockquote class="series-blockquote">
+  <div class="series-title">{{ $seriesName }}</div>
+  <div>
+    {{ range $i, $p := $seriesPages }}
+      {{ $num := add $i 1 }} <!-- 序号从1开始 -->
+      {{ if eq $p.Permalink $.Permalink }}
+      <div class="series-item-active">
+        <strong class="series-item-active-flag">⭐</strong>
+        <strong><strong>{{ $num }}.</strong> {{ $p.Title }}</strong>
+      </div>
+      {{ else }}
+      <div class="series-item">
+        {{ $num }}.<a href="{{ $p.Permalink }}">{{ $p.Title }}</a>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</blockquote>
+
+{{ end }}
+{{ end }}

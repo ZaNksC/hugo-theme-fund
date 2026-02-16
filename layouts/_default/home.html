@@ -13,4 +13,16 @@
         {{ partial "right-side" . }}
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const content = document.querySelector('meta[name="home-page-content"]').getAttribute('content');
+        if (content) {
+            new TypeIt("#header-type-it", {
+                strings: content,
+                speed: 75,
+                loop: false
+            }).go();
+        }
+    });
+</script>
 {{ end }}

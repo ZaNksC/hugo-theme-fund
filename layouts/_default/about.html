@@ -3,7 +3,7 @@
 <!-- 预设作者 -->
 {{- $authorsMap := newScratch -}}
 {{- range .Site.Params.authorInfo -}}
-{{- $authorsMap.Set .name (dict "avatar" .avatar "summary" .summary "social" .social) -}}
+{{- $authorsMap.Set .name (dict "avatar" .avatar "summary" .summary "social" .social "moreInfo" .moreInfo) -}}
 {{- end -}}
 
 {{- $paginator := .Paginate .Pages }}
@@ -25,21 +25,34 @@
                 {{- $authorInfo := $authorsMap.Get .Params.name -}}
                 {{- $avatar := default "/images/default/avatar.jpg" $authorInfo.avatar -}}
                 {{- $summary := default (i18n "default-summary") ($authorInfo.summary) -}}
-                <div class="tab-content tab-pane {{- if (eq $index 0) }} active {{- end }} " id = "{{ .Params.slug }}" >
-                    <div class="about-meta">
-                        <div>
-                            <img src="{{ $avatar }}">
+                <div class="tab-content about-tab tab-pane {{- if (eq $index 0) }} active {{- end }} " id = "{{ .Params.slug }}" >
+                    <div class="about-meta-wrapper">
+                        <div class="about-meta">
+                            <div>
+                                <img src="{{ $avatar }}">
+                            </div>
+                            <div> {{ .Params.name }} </div>
+                            <div> {{ $summary }} </div>
+                            {{ partial "social.html" $authorInfo }}
                         </div>
-                        <div> {{ .Params.name }} </div>
-                        <div> {{ $summary }} </div>
-                        {{ partial "social.html" $authorInfo }}
+                        <div class="fund-divider-vertical">
+                            <span class="fund-divider-line" style="height: 90%"></span>
+                        </div>
+                        <div class="about-info">
+                            {{ .Content }}
+                        </div>
                     </div>
-                    <div class="fund-divider-vertical">
-                        <span class="fund-divider-line" style="height: 90%"></span>
+                    {{ $filename := $authorInfo.moreInfo }}
+                    {{ $path := printf "external/about/%s" $filename }}
+                    {{ $externalPage := .Site.GetPage $path }}              
+                    {{ if $externalPage }}
+                    <div class="fund-divider about-external-more">
+                        <span> 更多信息 </span>
                     </div>
-                    <div class="about-info">
-                        {{ .Content }}
+                    <div class="about-external">
+                        {{ $externalPage.Content }}
                     </div>
+                    {{ end }}
                 </div>
             {{- end }}
         </div>

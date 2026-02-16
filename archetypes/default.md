@@ -1,8 +1,16 @@
 ---
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
 date: {{ .Date }}
-draft: true
-author: ['小猫黄基金']
-categories: 'Markdown'
-tags: ['markdown', 'example']
+draft: false
+author:
+  - 剥龙虾大王
+categories: 
+  - ''
+tags: 
+  - ''
+summary: 
+slug: 
+image: 
+series: 
+series_index: 
 ---

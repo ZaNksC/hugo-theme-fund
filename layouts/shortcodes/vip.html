@@ -1,0 +1,19 @@
+{{ $validStyle := slice "blue" "green" "yellow" "gray" "red" }}
+{{ $style := .Get "style" | default "blue" }}
+
+{{ $img := .Get "img" | default "/images/default/vip.webp" }}
+<div class="device card-list-item card-list-item-style-{{ $style }}">
+    <div class="device-item-img-wrapper">
+        <img
+                src="{{ $img }}"
+        onerror="this.onerror=null;this.src='/images/default/vip.webp';"
+        />
+    </div>
+    <div class="item-content-wrapper card-list-item-subtext">
+        <div class="device-meta-item"> <strong>⏳ 到期时间: </strong>{{ .Get "time" }} </div>
+        <div class="device-meta-item"> <strong>💰 价格:</strong> {{ .Get "price" }} </div>
+        <div class="device-desc">
+            {{ .Inner }}
+        </div>
+    </div>
+</div>

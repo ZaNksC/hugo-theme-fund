@@ -1,6 +1,9 @@
 {{- $startTime := .Site.Params.feature.runningTime.startTime | default "2024-02-16 00:00:00" -}}
 <meta name="start-time" content="{{ $startTime }}">
 
+{{- $homePageContent := .Site.Params.homePageContent | default "" -}}
+<meta name="home-page-content" content="{{ $homePageContent }}">
+
 <link rel="shortcut icon" href="{{ .Params.icon }}" type="image/x-icon">
 <link rel="icon" href="{{ .Params.icon }}" type="image/x-icon">
 

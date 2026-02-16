@@ -1,0 +1,89 @@
+.credit-card {
+    display: flex;
+    gap: 2rem;
+    border-radius: 0.5rem;
+    background-color: var(--blockquote-bg-color);
+    padding: 1rem;
+}
+
+.card-img {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card-img-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.card-img-wrapper img {
+    border-radius: 0.8rem;
+    margin: 0;
+}
+
+.card-status {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.card-meta-item {
+    padding: 0.5rem 0.5rem 0.5rem 0;
+}
+
+.credit-card-content {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.credit-card-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.card-flex1 {
+    flex: 1;
+}
+
+.card-subtitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-sub-text {
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+.card-sub-text ul{
+    margin-left: 0;
+    margin-right: 0;
+    padding-inline-start: 2rem;
+}
+.credit-card-title {
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 600px) {
+    .credit-card {
+        flex-direction: column; /* 变成纵向堆叠 */
+    }
+
+    .card-img-wrapper img {
+        border-radius: 2rem;
+    }
+
+    .card-subtitle {
+        justify-self: unset;
+    }
+}
+

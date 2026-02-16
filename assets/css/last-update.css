@@ -86,3 +86,14 @@
     vertical-align: middle;
 }
 
+@media (max-width: 800px) {
+    .top-post-cover {
+        display: none;
+    }
+
+    .top-post-summary {
+        max-height: 10vh;
+        overflow: hidden;
+    }
+}
+

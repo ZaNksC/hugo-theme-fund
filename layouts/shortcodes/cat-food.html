@@ -1,0 +1,47 @@
+<link rel="stylesheet"
+      href="../../assets/css/shortcode/cat-food.css">{{ $validStyle := slice "blue" "green" "yellow" "gray" "red" }}
+{{ $style := .Get "style" | default "blue" }}
+
+{{ $img := .Get "img" | default "/images/default/cat-food.webp" }}
+<div class="cat-food card-list-item card-list-item-style-{{ $style }}">
+    <div class="cat-food-item-img-wrapper">
+        <img
+                src="{{ $img }}"
+                onerror="this.onerror=null;this.src='/images/default/cat-food.webp';"
+        />
+    </div>
+    <div class="item-content-wrapper cat-food-content">
+        <div class="cat-food-title">
+            {{ .Get "title" | default "为什么不给小猫的食品取名字？" }}
+        </div>
+        <div class="cat-food-meta-wrapper card-list-item-subtext">
+            <div class="card-list-item-meta">
+                <div class="card-food-meta-item-label">🌍产地</div>
+                <div class="card-food-meta-item-content">{{ .Get "from" }}</div>
+            </div>
+            <div class="card-list-item-meta">
+                <div class="card-food-meta-item-label">⚖️规格</div>
+                <div class="card-food-meta-item-content">{{ .Get "size" }}</div>
+            </div>
+            <div class="card-list-item-meta">
+                <div class="card-food-meta-item-label">🍽️系列</div>
+                <div class="card-food-meta-item-content">{{ .Get "series" }}</div>
+            </div>
+            <div class="card-list-item-meta">
+                <div class="card-food-meta-item-label">🥩版本</div>
+                <div class="card-food-meta-item-content">{{ .Get "edition" }}</div>
+            </div>
+            <div class="card-list-item-meta">
+                <div class="card-food-meta-item-label">😻评分</div>
+                <div class="card-food-meta-item-content">{{ .Get "rating" }}</div>
+            </div>
+            <div class="card-list-item-meta">
+                <div class="card-food-meta-item-label">💰价格</div>
+                <div class="card-food-meta-item-content">{{ .Get "price" }}</div>
+            </div>
+        </div>
+        <div class="cat-food-desc card-list-item-subtext">
+            {{ .Inner }}
+        </div>
+    </div>
+</div>

@@ -1,13 +1,18 @@
 .friends-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4列 */
-    grid-template-rows: repeat(2, 1fr); /* 2行 */
+    grid-template-columns: repeat(2, 1fr); /* 3列 */
+    grid-auto-rows: auto;
     justify-content: center;
     place-items: center;
-    gap: 2rem;
-    min-height: 30rem;
+    gap: 1rem;
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+@media (max-width: 768px) {
+    .friends-container {
+        grid-template-columns: repeat(1, 1fr); 
+    }
 }
 
 .friend-content {
@@ -17,29 +22,34 @@
 }
 
 .friend-card {
-    padding: 0.5rem;
-    border: 1px solid var(--board-color);
-    border-radius: 1.2rem;
-    gap: 0.5rem;
     display: flex;
-    flex-direction: column;
-    width: 14rem;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.5rem;
 
     img {
-        height: 10rem;
-        width: 10rem;
-        border-radius: 2rem;
+        height: 5rem;
+        width: 5rem;
+        border-radius: 0.5rem;
     }
 }
 
 .friend-card:hover {
-    transform: translateY(-1rem);
+    transform: translateY(-0.3rem);
     transition: 0.3s ease-in-out;
 }
 
 .friend-card-meta {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    width: 14rem;
+    height: 5rem;
+    
+
+    .fund-title {
+        text-align: left;
+    }
 }
 
 .friends-description {

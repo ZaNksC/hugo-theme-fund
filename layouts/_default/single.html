@@ -20,12 +20,15 @@
     <div class="post-header">
         <div class="over-title-container">
             {{ $original := .Params.original | default true }}
-            <div>{{- if $original }} 原创 {{- else }} 转载 {{- end }}</div>
+            <div class="ori-icon">
+                {{- if $original }}
+                <img src="/images/default/ori.webp" />
+                {{- else }}
+                <img src="/images/default/oth.webp" />
+                {{- end }}
+            </div>
             {{- if .Params.category }}
             <div>{{ .Params.category }}</div>
-            {{- end }}
-            {{- if .Params.series }}
-            <div>{{ .Params.series }}</div>
             {{- end }}
         </div>
         <div class="title">
@@ -54,8 +57,12 @@
                     {{- if ge $daysAgo (math.Mul 180 24) }}
                     <blockquote id="expiration-reminder">
                         <span style="font-size: 1.2rem">⚠️</span>
-                         这篇文章最后更新已经超过180天了，内容可能已经过时，如有想法请留言或通过其它方法与我交流。
+                        这篇文章最后更新已经超过180天了，内容可能已经过时，如有想法请留言或通过其它方法与我交流。
                     </blockquote>
+                    {{- end }}
+
+                    {{- if .Params.series }}
+                    {{- partial "post/series.html" . -}}
                     {{- end }}
 
                     {{ .Content }}
@@ -63,13 +70,52 @@
                     {{- partial "copyright.html" . -}}
                 </div>
                 <div class="post-footer">
+                    <div class="fund-divider fund-title pn-text">
+                        <span>看看其他文章</span>
+                    </div>
+                    <div class="post-nav">
+                        {{ with .Prev }}
+                        <a class="nav-block prev" href="{{ .RelPermalink }}">
+                            <span class="arrow">《 </span>
+                            <div class="pn-content-container">
+                                <span>{{ .Title }}</span>
+                            </div>
+                        </a>
+                        {{ else }}
+                        <div class="nav-block prev no-item">
+                            <span class="arrow"></span>
+                            <div class="pn-content-container">
+                                <span>已经是第一篇了哦</span>
+                            </div>
+                        </div>
+                        {{ end }}
+
+                        {{ with .Next }}
+                        <a class="nav-block next" href="{{ .RelPermalink }}">
+                            <div class="pn-content-container">
+                                <span>{{ .Title }}</span>
+                            </div>
+                            <span class="arrow"> 》</span>
+                        </a>
+                        {{ else }}
+                        <div class="nav-block next no-item">
+                            <div class="pn-content-container">
+                                <span>已经是最后一篇了哦</span>
+                            </div>
+                            <span class="arrow"></span>
+                        </div>
+                        {{ end }}
+                    </div>
+
+
+
                     <div class="comments">
                         {{- if .Site.Params.feature.comments }}
-                            {{ $commentsEnable := .Site.Params.comments.defaultInPost | default false }}
-                            {{ $commentsInPost := .Params.comments | default false }}
-                            {{- if or $commentsEnable $commentsInPost }}
-                                {{- partial "comments.html" . }}
-                            {{- end }}
+                        {{ $commentsEnable := .Site.Params.comments.defaultInPost | default false }}
+                        {{ $commentsInPost := .Params.comments | default false }}
+                        {{- if or $commentsEnable $commentsInPost }}
+                        {{- partial "comments.html" . }}
+                        {{- end }}
                         {{- end }}
                     </div>
                 </div>

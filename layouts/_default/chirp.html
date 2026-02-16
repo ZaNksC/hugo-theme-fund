@@ -17,7 +17,11 @@
                     <img src="{{ $avatar }}">
                 </div>
                 <div class="chirp-info">
+                    {{- $authorInfo := $authorsMap.Get .Params.author -}}
                     <div class="chirp-content post-container">
+                        <div>
+                            <div class="chirp-author" style="font-weight: bold; font-size: 1.4rem; color: var(--theme);">{{ .Params.author }}</div>
+                        </div>
                         {{ .Content }}
                     </div>
                     <div class="chirp-imgs-container">

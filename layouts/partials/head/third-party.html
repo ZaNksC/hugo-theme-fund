@@ -11,15 +11,19 @@
 <link rel="stylesheet" href="/css/third-party/swiper-bundle.min.css" />
 <script src="/js/third-party/swiper-bundle.min.js"></script>
 
+<!-- typeit -->
+<script src="https://cdn.jsdelivr.net/npm/typeit@6.1.1/dist/typeit.min.js"></script>
+
 <!-- cal-heatmap 热力图 -->
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://unpkg.com/cal-heatmap/dist/cal-heatmap.min.js"></script>
 <link rel="stylesheet" href="https://unpkg.com/cal-heatmap/dist/cal-heatmap.css" />
 
 <!-- WordCloud -->
-{{ if .Site.Params.feature.wordcloud }}
-<script src="/js/optional/wordcloud2.js"></script>
-{{- end }}
+<script src="/js/third-party/wordcloud2.js"></script>
+
+<!-- fontawesome -->
+<script src="https://kit.fontawesome.com/4f00e1f6e6.js" crossorigin="anonymous"></script>
 
 <!-- busuanzi -->
 {{ if .Site.Params.feature.metrics }}

@@ -11,6 +11,12 @@
     }
 }
 
+@media (max-width: 750px) {
+    :root {
+        font-size: 12px;
+    }
+}
+
 :root {
     --primary: #333;
     --secondary: #3a3a3a;
@@ -31,6 +37,8 @@
     --stroke-color: var(--primary);
     --swiper-pagination-bullet-inactive-color: var(--primary);
     --tk-code-color: #cf222e;
+    --fund-btn-hover-color: #ded9d4;
+    --timeline-color: #adadad;
 }
 
 .dark {
@@ -53,4 +61,5 @@
     --stroke-color: var(--primary);
     --swiper-pagination-bullet-inactive-color: var(--primary);
     --tk-code-color: #ff7b72;
+    --fund-btn-hover-color: #4b4b4b;
 }

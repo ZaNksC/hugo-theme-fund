@@ -16,8 +16,8 @@
     justify-content: flex-start;
 
     .avatar-container > img {
-        height: 3rem;
-        width: 3rem;
+        height: 5rem;
+        width: 5rem;
         border-radius: 0.5rem;
     }
 
@@ -92,6 +92,12 @@
     .chirp-imgs-container > a:nth-child(8) {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, auto);
+    }
+
+    @media (max-width: 768px) {
+        margin-left: 2rem;;
+        margin-right: 2rem;
+        margin-bottom: 2rem;
     }
 }
 

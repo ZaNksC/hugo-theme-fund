@@ -1,0 +1,24 @@
+.square-stamp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 高度固定 */
+    height: 2rem;
+
+    /* 宽度随文字自动扩展 */
+    padding: 0.2rem 2rem;
+
+    /* 背景图相关 */
+    background-repeat: no-repeat;
+    background-size: 100% 100%; /* 拉伸整个区域（适合框型背景） */
+    background-position: center;
+
+    /* 文字样式 */
+    font-family: "STXingkai", "KaiTi", "FangSong", "LiSu", serif;
+    color: #f1eae1;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    user-select: none;
+    line-height: 1;
+}

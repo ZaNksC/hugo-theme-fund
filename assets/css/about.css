@@ -10,13 +10,29 @@
 
 .tab-content {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 100%;
 }
 
 .tab-item {
     color: var(--primary);
+}
+
+.about-meta-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.about-external-more {
+    margin-left: 1.7em !important;
+    margin-right: 1.7rem !important;
+    margin-top: 2rem !important;
+}
+
+.about-external-more > span {
+    font-weight: bold !important;
+    font-size: 1.2rem !important;
 }
 
 .about-meta {
@@ -37,9 +53,32 @@
     width: 70%;
     padding: 0.5rem;
     text-align: left;
-    overflow-y: scroll;
-
     p {
         margin: 0;
+    }
+}
+
+.about-external {
+    text-align: left;
+}
+
+
+@media (max-width: 768px) {
+    .tab-content {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    
+        .fund-divider-vertical {
+            display: none;
+        }
+    }
+    
+    .about-meta {
+        width: 100%;
+    }
+    
+    .about-info {
+        width: unset;
     }
 }
